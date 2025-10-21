@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Bootstrap Import -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container pt-3">
+      <h1>Home</h1>
+
+      <!-- <section id="creation-form">
+        <form action="">
+          <div class="mb-3">
+            <label for="titoloInput" class="form-label">Titolo Post</label>
+            <input type="text" class="form-control" id="titoloInput" required>
+          </div>
+          <div class="mb-3">
+            <label for="descrizioneInput" class="form-label">Descrizione Post</label>
+            <textarea class="form-control" id="descrizioneInput" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-success px-4">Confirm</button>
+          </div>
+        </form>
+      </section> -->
+      
+      <section id="post-list">
+        <div class="text-center my-2">
+          <a href="{% url 'post_create' %}" class="btn btn-outline-success px-4 fs-5">+ Crea un nuovo post</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 gap-3">
+          {% for post in posts %}
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{ post.titolo }}
+                  </h5>
+                  <p class="card-text">
+                    {{ post.data_creazione }}
+                  </p>
+                  <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">🔍 Dettagli</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

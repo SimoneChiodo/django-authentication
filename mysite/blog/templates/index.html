@@ -12,6 +12,17 @@
     <div class="container pt-3">
       <h1>Home</h1>
 
+      {% if user.is_authenticated %}
+      <div class="border rounded-4 px-4 py-3">
+        <h3>Login</h3>
+        <p class="mb-2">
+          Username: <i>{{ user.username }}</i>
+          <a href="{% url 'logout' %}" class="btn btn-danger btn-sm ms-2">Logout</a>
+        </p>
+      </div>
+      {% endif %}
+
+
       <!-- <section id="creation-form">
         <form action="">
           <div class="mb-3">
@@ -30,7 +41,7 @@
       </section> -->
       
       <section id="post-list">
-        <div class="text-center my-2">
+        <div class="text-center mt-2 mb-4">
           <a href="{% url 'post_create' %}" class="btn btn-outline-success px-4 fs-5">+ Crea un nuovo post</a>
         </div>
 

@@ -1,0 +1,10 @@
+# File e cartelle temporanei
+__pycache__/
+*.pyc
+*.pyo
+
+# Cartella delle migrazioni 
+*/migrations/__pycache__/
+
+# Database locale
+db.sqlite3

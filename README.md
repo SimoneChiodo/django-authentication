@@ -32,5 +32,5 @@ Capire in modo pratico:
 ## 🛠️ Tecnologie utilizzate
 - **Python** → linguaggio principale del progetto.  
 - **Django** → framework principale, con moduli `forms`, `auth` e `messages`.  
-- **SQLite** → database predefinito per la gestione dei dati dei post e degli utenti.  
-- **HTML** → per creare le pagine di form, login e feedback.  
+- **SQLite** → database predefinito per la gestione dei dati.  
+- **HTML** → per creare le pagine.  
